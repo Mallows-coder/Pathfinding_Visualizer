@@ -30,7 +30,7 @@ This section serves as the main control hub for the visualizer, allowing users t
 **Utility Icons**
 1. Settings (Gear): Opens a configuration modal where you can manually adjust the grid dimensions (Rows: 10-40, Columns: 10-60) and precisely set the starting coordinates for both the Start and Target nodes.
 2. Theme: Toggles the application interface between light mode and a custom dark mode.
-3. GitHub: Links directly to the project's source code repository.
+3. GitHub: Links directly to github.com
 
 **RECOMMENDATION AND IMPROVEMENT**
 1. Code a responsive layout
