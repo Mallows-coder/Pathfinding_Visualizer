@@ -36,3 +36,6 @@ This section serves as the main control hub for the visualizer, allowing users t
 1. Code a responsive layout
 2. Add additional algorithms and maze generation
 3. Improve GitHub utility icon
+
+**NOTE**
+For the Depth-First Search Algorithm. Unlike algorithms that hunt for the shortest route, DFS is a blind, stubborn explorer. It picks a direction and walks until it hits a wall, naturally creating a winding, chaotic, "snake-like" path. If you notice a massive, zig-zagging yellow trail filling up the board, the visualizer isn't broken—DFS is simply doing its job by tracking the first path it happens to find, rather than the most efficient one!
