@@ -1,8 +1,7 @@
 **PATHFINDING VISUALIZER**
 
 <img width="1918" height="1037" alt="image" src="https://github.com/user-attachments/assets/cf99caa3-376b-46b5-a8ef-bc811674df53" />
-<img width="1918" height="1032" alt="image" src="https://github.com/user-attachments/assets/94a512e3-64d8-4fc0-9d33-2898af2f5d09" />
-
+<img width="1915" height="1035" alt="image" src="https://github.com/user-attachments/assets/d73bd18e-09aa-4aec-94ce-8513ccb6ace9" />
 
 Hi! and welcome to my Pathfinding Visualizer project.
 
