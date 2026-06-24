@@ -1,0 +1,204 @@
+.middle{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* This part is the side panel */
+
+.side-panel{
+    padding: 10px;
+    display: flex;
+    width: 250px;
+    flex-direction: column;
+    border: solid;
+    border-radius: 9px;
+    gap: 10px;
+}
+
+.side-panel-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-panel-logo p{
+    margin: 0;
+}
+
+.side-panel-logo img{
+    width: 30px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.sp-boxes{
+    flex: 1;
+    border-radius: 9px;
+    border: solid;
+    padding: 10px;
+}
+
+.sp-boxes p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+#tip{
+    height: 100px;
+    border-radius: 9px;
+    border: solid;
+    padding: 10px;
+}
+
+.tip-logo, .live-logo, .footer-items{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tip-logo p, .live-logo p{
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.tip-text p{
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 0;
+    text-align: justify;
+}
+
+.tip-logo img, .live-logo img, .footer-items img{
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+
+/* This part is the maze */
+.maze-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 10px;
+    border-radius: 8px;
+}
+
+.content{
+    border-radius: 9px;
+}
+
+#legends{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: solid;
+    padding: 10px;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+#legends p{
+    margin: 0;
+}
+
+.legend-item{
+    display: flex;
+    align-items: center;
+}
+
+#maze{
+    display: grid;
+    border: solid;
+    flex-grow: 1;
+    padding: 10px;
+    background-color: white;
+    transition: ease-in-out 0.5s;
+}
+
+.grid-node{
+    border: 1px solid gray;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.node-wall {
+    background-color: #333;
+    border: 1px solid #333;
+    animation: wallPopIn 0.25s ease-out forwards;
+}
+
+.node-start{
+    background-color: #22C55E;
+}
+
+.node-target{
+    background-color: #EF4444;
+}
+
+
+.node-visited {
+    background-color: #4e8ef6;
+    border: 1px solid rgba(178, 242, 255, 0.5);
+    animation: visitedAnimation 0.3s ease-out alternate;
+}
+
+
+.node-shortest-path {
+    background-color: #FACC15;
+    border: 1px solid #ffe600;
+    transform: scale(1.05);
+    transition: background-color 0.2s ease-in, transform 0.2s ease-in;
+}
+
+@keyframes visitedAnimation {
+    0% {
+        transform: scale(0.3);
+        background-color: rgba(0, 0, 66, 0.75);
+        border-radius: 100%;
+    }
+    50% {
+        background-color: rgba(17, 104, 217, 0.75);
+    }
+    100% {
+        transform: scale(1);
+        background-color: rgba(0, 190, 218, 0.75);
+    }
+}
+
+@keyframes wallAnimation {
+    0% {
+        transform: scale(0.3);
+        border-radius: 100%;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        border-radius: 0;
+    }
+}
+
+@keyframes wallPopIn {
+    0% {
+        transform: scale(0.3);
+        border-radius: 50%;
+        background-color: #555;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1.0);
+        border-radius: 0;
+        background-color: #333;
+    }
+}

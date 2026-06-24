@@ -1,0 +1,132 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.left-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon{
+    height: 35px;
+    width: 50px;
+}
+
+.logo-icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.title-text-area {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.title-text-area h1, .title-text-area p{
+    margin: 0;
+}
+
+.title-text-area h1{
+    font-size: 18px;
+}
+
+.title-text-area p{
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+.right-nav{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 9px;
+    border: solid;
+}
+
+.lower-portion{
+    display: flex;
+    flex-direction: row;  
+    align-items: flex-end;
+    gap: 15px;  
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.control-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    min-width: 150px;
+    max-width: 250px;
+}
+
+.control-group label{
+    font-weight: 500;
+    padding-left: 3px;
+}
+
+.control-group select{
+    margin-top: 5px;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.control-group option{
+    font-size: 14px;
+}
+
+.btn{
+    height: 35px;
+    width: 128px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn:hover{
+    background-color: rgb(226, 226, 226);
+}
+
+.utility-icons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.icon-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.icon-btn img{
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}   

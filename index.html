@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/middle.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="icon" href="imgs/favicon3.png" type="image/png">
+    <script type="module" src="js/maze.js" defer></script>
+    <script type="module" src="js/buttons.js" defer></script>
+    <script type="module" src="js/algoPathFinder.js" defer></script>
+    <script type="module" src="js/algoInformation.js" defer></script>
+    <script type="module" src="js/stats.js" defer></script>
+    <script type="module" src="js/utilities.js" defer></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <!-- Logo -->
+            <div class="left-nav">
+                <div class="logo-icon">
+                    <img src="imgs/ai-mi-algorithm-svgrepo-com.svg">
+                </div>
+
+                <div class="title-text-area">
+                    <h1>Pathfinding Visualizer</h1>
+                    <p>Visualize algorithm. Understand graphs.</p>
+                </div>
+            </div>
+
+            <!-- right navigation -->
+            <div class="right-nav">
+
+                <div class="utility-icons">
+                    <button class="icon-btn" id="settings">
+                        <img src="imgs/settings-2-svgrepo-com.svg" alt="Settings">
+                    </button>
+
+                    <button class="icon-btn" id="theme">
+                        <img src="imgs/sun-svgrepo-com.svg" alt="Theme">
+                    </button>
+
+                    <button class="icon-btn">
+                        <img src="imgs/github-142-svgrepo-com.svg" alt="GitHub">
+                    </button>
+                </div>
+
+                <div class="lower-portion">
+                    <div class="control-group">
+                        <label>Algorithms</label>
+                        <select id="algorithm-selection">
+                            <option value="bfs">Breadth-First Search</option>
+                            <option value="dfs">Depth-First Search</option>
+                            <option value="dijkstra">Dijkstra's Algorithm</option>
+                            <option value="astar">A* Search</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Maze Generation</label>
+                        <select id="maze-selection">
+                            <option value="recursive-backtracker">Recursive Backtracking</option>
+                            <option value="recursive-division">Recursive Division</option>
+                            <option value="random-prims">Randomized Prim's Algorithm</option>
+                            <option value="random-scatter">Random Wall Scatter</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Maze & Algorithm Speed</label>
+                        <select id="speed-selection">
+                            <option value="slow">Slow</option>
+                            <option value="average">Average</option>
+                            <option value="fast">Fast</option>
+                        </select>
+                    </div>
+
+                    <button class="btn" id="btn-generate">Generate Maze</button>
+                    <button class="btn" id="btn-visualize">Visualize</button>
+                    <button class="btn" id="btn-clear-path">Clear Path</button>
+                    <button class="btn" id="btn-clear-board">Clear Board</button>
+                </div>   
+
+            </div>
+        </header>
+
+        <!-- Middle Part -->
+        <div class="middle">
+            <!-- Side Panel -->
+            <div class="side-panel">
+                <div class="side-panel-logo">
+                    <img src="imgs/network-wired-svgrepo-com.svg" alt="network-logo">
+                    <p><strong>Algorithm Information</strong></p>
+                </div>
+
+                <div class="sp-boxes">
+                    <div>
+                        <!--this is where the algorithm name will be-->
+                        <p id="algorithm-title"></p>
+                    </div>
+
+                    <div>
+                        <!--this is where the algorithm description will be-->
+                        <p id="algorithm-short-desc"></p>
+                    </div>
+                </div>
+
+                <div class="sp-boxes">
+                    <div class="live-logo">
+                        <img src="imgs/live-svgrepo-com.svg" alt="live-icon">
+                        <p>Live Status</p>
+                    </div>
+
+                    <div>
+                        <!--this is where live information will be placed-->
+                        <p id="status-running"><strong>Status:</strong> Waiting...</p>
+                        <p id="status-explored"><strong>Nodes Explored:</strong> 0</p>
+                        <p id="status-path-length"><strong>Path Length:</strong> 0</p>
+                        <p id="status-time"><strong>Time:</strong> 0.00ms</p>
+                    </div>
+                </div>
+
+                <div id="tip">
+                    <div class="tip-logo">
+                        <img src="imgs/lightbulb-exclamation-alt-svgrepo-com.svg" alt="Tip-Icon">
+                        <p>Tip</p>
+                    </div>
+
+                    <div class="tip-text">
+                        <p>
+                            Click and drag on the grid to draw walls. 
+                            Green is the start node and red is the 
+                            target node.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maze -->
+            <div class="maze-container"> 
+                <div class="content" id="legends">
+                    <div class="legend-item">
+                        <p>🟩 Start Node</p>
+                    </div>
+
+                    <div class="legend-item">
+                        <p>🟥 Target Node</p>
+                    </div>
+
+                    <div class="legend-item">
+                        <p>⬛ Wall</p>
+                    </div>
+
+                    <div class="legend-item">
+                        <p>🟦 Visited Node</p>
+                    </div>
+
+                    <div class="legend-item">
+                        <p>🟨 Shortest Path</p>
+                    </div>
+                </div>
+
+                <div class="content" id="maze">
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-items">
+                <img src="imgs/network-svgrepo-com.svg" alt="nodes-icon">
+                <p id="footer-nodes-explored"><strong>Nodes Explored:</strong> 0</p>
+            </div>
+
+            <div class="footer-items">
+                <img src="imgs/path-svgrepo-com.svg" alt="path-length-icon">
+                <p id="footer-path-length"><strong>Path Length:</strong> 0</p>
+            </div>
+
+            <div class="footer-items">
+                <img src="imgs/clock-lines-svgrepo-com.svg" alt="execution-time-icon">
+                <p id="footer-time"><strong>Time: </strong>0.00ms</p>
+            </div>
+
+            <div class="footer-items">
+                <img src="imgs/html-tag-svgrepo-com.svg" alt="algorithm-icon">
+                <p id="footer-algorithm"></p>
+            </div>
+
+            <div class="footer-items">
+                <img src="imgs/hourglass-half-svgrepo-com.svg" alt="time-complexity-icon">
+                <p id="footer-time-complexity"></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- POP-UP for the settings button -->
+    <div id="settings-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="close-modal-btn" id="close-settings">&times;</button>
+            
+            <h2>Grid & Node Settings</h2>
+            <hr class="modal-divider">
+
+            <div class="modal-body">
+                <h3>Grid Dimensions</h3>
+                <div class="setting-row">
+                    <div class="input-group">
+                        <label for="grid-rows">Rows (10-40):</label>
+                        <input type="number" id="grid-rows" min="10" max="40" value="20">
+                    </div>
+                    <div class="input-group">
+                        <label for="grid-cols">Columns (10-60):</label>
+                        <input type="number" id="grid-cols" min="10" max="60" value="30">
+                    </div>
+                </div>
+
+                <h3>Start Node Position</h3>
+                <div class="setting-row">
+                    <div class="input-group">
+                        <label for="start-row">Row:</label>
+                        <input type="number" id="start-row" min="1" max="40" value="5">
+                    </div>
+                    <div class="input-group">
+                        <label for="start-col">Column:</label>
+                        <input type="number" id="start-col" min="1" max="60" value="5">
+                    </div>
+                </div>
+
+                <h3>Target Node Position</h3>
+                <div class="setting-row">
+                    <div class="input-group">
+                        <label for="target-row">Row:</label>
+                        <input type="number" id="target-row" min="1" max="40" value="15">
+                    </div>
+                    <div class="input-group">
+                        <label for="target-col">Column:</label>
+                        <input type="number" id="target-col" min="1" max="60" value="25">
+                    </div>
+                </div>
+
+                <button id="btn-apply-settings" class="btn apply-btn">Apply & Reset</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
