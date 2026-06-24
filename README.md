@@ -32,5 +32,5 @@ This section serves as the main control hub for the visualizer, allowing users t
 3. GitHub: Links directly to the project's source code repository.
 
 **RECOMMENDATION AND IMPROVEMENT**
->> Code a responsive layout
->> Add additional algorithms and maze generation
+1. Code a responsive layout
+2. Add additional algorithms and maze generation
