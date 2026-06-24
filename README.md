@@ -1,6 +1,8 @@
 **PATHFINDING VISUALIZER**
 
 <img width="1918" height="1037" alt="image" src="https://github.com/user-attachments/assets/cf99caa3-376b-46b5-a8ef-bc811674df53" />
+<img width="1918" height="1032" alt="image" src="https://github.com/user-attachments/assets/94a512e3-64d8-4fc0-9d33-2898af2f5d09" />
+
 
 Hi! and welcome to my Pathfinding Visualizer project.
 
@@ -28,7 +30,7 @@ This section serves as the main control hub for the visualizer, allowing users t
 
 **Utility Icons**
 1. Settings (Gear): Opens a configuration modal where you can manually adjust the grid dimensions (Rows: 10-40, Columns: 10-60) and precisely set the starting coordinates for both the Start and Target nodes.
-2. Theme (Sun/Moon): Toggles the application interface between light mode and a custom dark mode.
+2. Theme: Toggles the application interface between light mode and a custom dark mode.
 3. GitHub: Links directly to the project's source code repository.
 
 **RECOMMENDATION AND IMPROVEMENT**
