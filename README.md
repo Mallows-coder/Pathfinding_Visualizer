@@ -35,3 +35,4 @@ This section serves as the main control hub for the visualizer, allowing users t
 **RECOMMENDATION AND IMPROVEMENT**
 1. Code a responsive layout
 2. Add additional algorithms and maze generation
+3. Improve GitHub utility icon
